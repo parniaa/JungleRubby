@@ -1,5 +1,7 @@
 class Admin::DashboardController < ApplicationController
-  http_basic_authenticate_with name: ENV["HTTP_BASIC_AUTH_USER"].to_s, password: ENV["HTTP_BASIC_AUTH_PASSWORD"].to_s
+  http_basic_authenticate_with name: ENV["ADMIN_USER"], password: ENV["ADMIN_PASSWORD"]
   def show
+    @products = Product.count
+    @category = Category.count
   end
 end
