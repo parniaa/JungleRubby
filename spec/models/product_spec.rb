@@ -12,7 +12,6 @@ RSpec.describe Product, type: :model do
         price: 2500, 
         image:'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
       )
-
       @product.save!
 
       expect(@product).to be_valid
@@ -28,7 +27,6 @@ RSpec.describe Product, type: :model do
         price: 2500, 
         image:'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
       )
-
       @product.save
 
       expect(@product).not_to be_valid
@@ -45,7 +43,6 @@ RSpec.describe Product, type: :model do
         price: 2500, 
         image:'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
       )
-
       @product.save
 
       expect(@product).not_to be_valid
@@ -62,7 +59,6 @@ RSpec.describe Product, type: :model do
         price: 2500, 
         image:'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
       )
-
       @product.save
 
       expect(@product).not_to be_valid
@@ -86,5 +82,4 @@ RSpec.describe Product, type: :model do
       expect(@product.errors.full_messages).to eq(["Price cents is not a number", "Price is not a number", "Price can't be blank"])
     end
   end
-
 end
