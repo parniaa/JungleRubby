@@ -88,7 +88,7 @@ cat2.products.create!({
   name:  'Modern Skateboards',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('electronics1.jpg'),
-  quantity: 40,
+  quantity: 0,
   price: 164.49
 })
 
@@ -96,8 +96,8 @@ cat2.products.create!({
   name:  'Hotdog Slicer',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('electronics2.jpg'),
-  quantity: 3,
-  price: 26.00
+  quantity: 0,
+  price: 260.00
 })
 
 cat2.products.create!({
