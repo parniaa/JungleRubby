@@ -1,12 +1,13 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature do
+RSpec.feature "ProductDetails", type: :feature, js: true do
+  # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
 
-    10.times do |n| 
+    10.times do |n|
       @category.products.create!(
-        name: Faker::Hipster.sentence(3),
+        name:  Faker::Hipster.sentence(3),
         description: Faker::Hipster.paragraph(4),
         image: open_asset('apparel1.jpg'),
         quantity: 10,
@@ -15,12 +16,18 @@ RSpec.feature "ProductDetails", type: :feature do
     end
   end
 
-  scenario "They can navigate from home page to product detail page" do 
-
+  scenario "They see product details" do
+    # ACT
     visit root_path
 
-    find('.product a', match: :first).click
+    # DEBUG
+    save_screenshot
 
-    expect(page).to have_css 'article.product-detail'
+    click_on('Details', match: :first)
+
+    expect(page).to have_css "article.product-detail"
+    
+    save_screenshot
+
   end
 end
